@@ -5,7 +5,7 @@ class Shake < Formula
 
   def install
     # system "stack", "install", "shake"
-    build = prefix/"build"
+    build = prefix/"bin"/"build"
 
     build.write <<~EOS
       #!/bin/sh
@@ -14,6 +14,5 @@ class Shake < Formula
     EOS
 
     chmod 0755, build
-    (HOMEBREW_PREFIX/"bin").install_symlink build
   end
 end
