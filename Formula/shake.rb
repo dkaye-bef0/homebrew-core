@@ -10,7 +10,7 @@ class Shake < Formula
     build.write <<~EOS
       #!/bin/sh
       mkdir -p .shake
-      ghc --make Build.hs -rtsopts -threaded -with-rtsopts=-I0 -outputdir=.shake -o .shake/shake && .shake/shake "$@"
+      stack exec -- ghc --make Build.hs -rtsopts -threaded -with-rtsopts=-I0 -outputdir=.shake -o .shake/shake && .shake/shake "$@"
     EOS
 
     chmod 0755, build
