@@ -5,7 +5,7 @@ class Shake < Formula
 
   def install
     # system "stack", "install", "shake"
-    build = prefix/"bin"/"build"
+    build = bin/"build"
 
     build.write <<~EOS
       #!/bin/sh
