@@ -14,6 +14,6 @@ class Shake < Formula
     EOS
 
     chmod 0755, build
-    bin.install_symlink build
+    (prefix/"bin").install_symlink build
   end
 end
