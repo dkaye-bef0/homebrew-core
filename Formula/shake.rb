@@ -1,7 +1,7 @@
-class Dynamodb < Formula
+class Shake < Formula
   version "0.0.1"
-
   url "https://github.com/dkaye-bef0/homebrew-core/raw/master/Archive/empty.tar"
+  depends_on "haskell-stack"
 
   def install
     system "stack install shake"
@@ -14,5 +14,6 @@ class Dynamodb < Formula
     EOS
 
     chmod 0755, build
+    bin.install_symlink build
   end
 end
