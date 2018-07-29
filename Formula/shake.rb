@@ -4,7 +4,7 @@ class Shake < Formula
   depends_on "haskell-stack"
 
   def install
-    system "stack install shake"
+    # system "stack", "install", "shake"
     build = prefix/"build.sh"
 
     build.write <<~EOS
