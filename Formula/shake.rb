@@ -1,6 +1,6 @@
 class Shake < Formula
   version "0.0.1"
-  url "https://github.com/dkaye-bef0/homebrew-core/raw/master/Archive/empty.tar"
+  url "https://github.com/dkaye-bef0/homebrew-core/raw/master/Archive/empty.tar.bz2"
   depends_on "haskell-stack"
 
   def install
