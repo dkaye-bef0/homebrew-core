@@ -3,20 +3,22 @@ class Graalvm < Formula
   url "https://github.com/oracle/graal/releases/download/vm-1.0.0-rc6/graalvm-ce-1.0.0-rc6-macos-amd64.tar.gz"
 
   def install
+    home = prefix/"Contents/Home"
     system "cp -R * #{prefix}/"
 
     gvm = bin/"gvm"
     gvm.write <<~EOS
+
 #!/bin/sh
 
-export JAVA_HOME=#{prefix}/Contents/Home
+export JAVA_HOME=#{home}
 
 if [ "$1" == "ls" ]; then
-  ls $JAVA_HOME/$2
+  ls #{home}/$2
 elif [ "$1" == "env" ]; then
-  echo $JAVA_HOME
+  echo #{home}
 else
-  #{prefix}/bin "$@"
+  #{home}/bin "$@"
 fi
     EOS
 
