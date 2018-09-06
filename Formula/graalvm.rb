@@ -3,8 +3,9 @@ class Graalvm < Formula
   url "https://github.com/oracle/graal/releases/download/vm-1.0.0-rc6/graalvm-ce-1.0.0-rc6-macos-amd64.tar.gz"
 
   def install
-    gvm = bin/"gvm"
+    system "cp -R * #{prefix}/"
 
+    gvm = bin/"gvm"
     gvm.write <<~EOS
 #!/bin/sh
 
