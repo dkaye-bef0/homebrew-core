@@ -9,8 +9,12 @@ class Graalvm < Formula
     gvm.write <<~EOS
 #!/bin/sh
 
+export JAVA_HOME=#{prefix}/Contents/Home
+
 if [ "$1" == "ls" ]; then
-  ls #{prefix}/bin
+  ls $JAVA_HOME/$2
+elif [ "$1" == "env" ]; then
+  echo $JAVA_HOME
 else
   #{prefix}/bin "$@"
 fi
