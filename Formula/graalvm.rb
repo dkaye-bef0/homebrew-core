@@ -18,7 +18,7 @@ if [ "$1" == "ls" ]; then
 elif [ "$1" == "env" ]; then
   echo #{home}
 else
-  #{home}/bin "$@"
+  #{home}/bin/$1 "$@"
 fi
     EOS
 
